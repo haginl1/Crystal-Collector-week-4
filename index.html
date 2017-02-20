@@ -1,65 +1,75 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <script src="assets/javascript/game.js" language="javascript" type="text/javascript"></script>
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
+  <title>Homework Week 4</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/javascript/game.js"></script>
+  
+  <style>
+    
+  </style>
 </head>
+<body>
 
-<body onload="randomLetter()">
-  <header id="masthead">
-    <div class="container">
-      <a href="index.html" id="logo">Games</a>
-      <!-- BOOTSTRAP NAV  -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Psychic Game |</a></li>
-            <li><a href="#">Hangman |</a></li>
-          </ul>
-        </div>
-        <!-- /.container -->
-      </nav>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Lisa Hagin Games</a>
     </div>
-  </header>
-  <div id="main-container" class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="well">
-          <img src="assets/images/lady.jpg" alt="Psychic Lady" style="width:100px;height:100px;float:right;"> 
-          <h1>Psychic Game</h1>
-          <p>Type a letter between a and z; upper or lower case (then press Guess)</p> 
+    <div class="collapse navbar-collapse" id="myNavbar">
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p id="pResults">Computer Number</p>
+        <p id="pResults" class="numberToMatch"></p>
+        <p id="pResults" class="winlossmessage"></p>
+      </div>
+      <div class="well">
+        <p id="pResults">Wins:  <span id="pResults" class="wins"></span></p>
+        
+        
+      </div>
+      <div class="well">
+        <p id="pResults">Losses:  <span class ="losses"></span></p>
+        
+      </div>
+      <div class="well">
+        <p id="pResults">Total Score</p>
+        <p id="pResults"class="score"></p>
+      </div>
+    </div>
+    <div class="col-sm-10 text-left"> 
+      <h1>Crystal Collector</h1>
+        <p>You will be given a random nuber at the start of the game. <br>There are four crystals below. By clicking on a crystal you will ad a specific amount of points to your total score.<br> You will win the game by matching your total score to the random number.<br> The value of each crystal is hidden from you until you click on it. <br>Each time when the game starts, the game will change the values of each crystal.</p>
+        </p><hr>
+      <h3>Select from the Crystals Below</h3><hr>
+        <img src="assets/images/gem1.png" alt="crystal1" class="pic1">
+        <img src="assets/images/gem2.png" alt="crystal2" class="pic2">
+        <img src="assets/images/gem3.png" alt="crystal3" class="pic3">
+        <img src="assets/images/gem4.png" alt="crystal4" class="pic4">
+    </div>
+    
+  </div>
+</div>
 
-          <form id="guessFrm">
-            <input id="guess" type="text" maxlength="1" minlength="1" name="letter" placeholder="Guess a letter" autofocus autocomplete="off"/>
-            <input  id="guessbtn" name="guess" type="button" value="Guess" onClick="guessOne()" />
-            <button id="restart" name="restart" type="button" class="submit" onClick="newGame()">Restart</button>
-          </form>   
-              <p id="message"></p>
-              <p id="wins"></p>
-              <p id="losses"></p>
-              <p id="chances"></p>
-              <p id="history"></p>
-               
-              <br>
-              <br>
-              <p id="hint"></p>
-          <br>
-          <br>            
-      </div><!--end well div-->  
-    </div><!--end col8 div-->
-      <div class="col-sm-4">
-        <div class="well">
-          <h2> Games</h2>
-          <img src="assets/images/psychic-game.jpg" class="social" alt="psychic game">
-          <img src="assets/images/hangman.jpg" class="social" alt="hangeman">
-        </div><!--end well div-->
-      </div><!--end col4 div-->
-    </div><!--end div class row div -->
+<footer class="container-fluid text-center ">
+  <p>Crystal Collector Game</p>
+</footer>
+
 </body>
-
-
+</html>

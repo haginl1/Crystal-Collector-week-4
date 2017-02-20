@@ -1,87 +1,88 @@
 
-var wins = 0;
-var losses = 0;
-var MAXTRIES = 3;
-var rLetter = "";
-var attempts = MAXTRIES;
-var DEBUG = 0;
-var h = "";
-var ph = 0;
+//Global Varible 
+var lose = 0;
+var win = 0;
+var crystalValue = Math.floor(Math.random() * (102)+ 19);
+var gemArray = [];
+var total = 0;
 
-//picks a random letter between a and z
-function randomLetter() {
-    var fuzzy =  Math.floor(Math.random() * 3) +1;
-    console.log(fuzzy);
-    var chars = "abcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ";
-    rLetter= chars.substr( Math.floor(Math.random() * 52), 1);
-    if (DEBUG == 1){
-      console.log(chars.indexOf(rLetter));
-      console.log(rLetter);
+$(document).ready(function(){
+	function gemFunc() {
+		for (var i = 0; i < 4; i++){
+		var gem = Math.floor(Math.random() * 12) + 1 ;
+		gemArray.push(gem);
+	  }	
+	}
+	gemFunc();
+  //target number to match
+  $(".numberToMatch").html(crystalValue);
+    console.log(crystalValue);
+		console.log(gemArray);
+
+  $('.pic1').on("click", function(){
+  //take the value and push it to total score
+    var gem1value = gemArray[0];
+    console.log(gem1value);
+    total = total + gemArray[0];
+    $(".score").html (total);
+    checkit();
+  });
+
+  $('.pic2').on("click", function(){
+  //take the value and push it to total score
+    var gem2value = gemArray[1];
+    console.log(gem2value);
+    total = total + gemArray[1];
+    $(".score").html (total);
+    checkit();
+  });
+
+  $('.pic3').on("click", function(){
+  //take the value and push it to total score
+    var gem3value = gemArray[2];
+    console.log(gem3value);
+    total = total + gemArray[2];
+    $(".score").html (total);
+    checkit();
+  });
+
+  $('.pic4').on("click", function(){
+  //take the value and push it to total score
+    var gem4value = gemArray[3];
+    console.log(gem4value);
+    total = total + gemArray[3];
+    $(".score").html (total);
+    checkit();
+  });
+  //check to see if the crystal value === total for win/loss
+  function checkit(){
+    if(crystalValue===total){
+      $(".winlossmessage").html("You won!");
+      win=win+1;
+      $(".wins").html(win);
+      //reset the game
+      reset();
     }
-    
-    document.getElementById("hint").innerHTML="It's near: " +chars[chars.indexOf(rLetter) - fuzzy];
-} 
-
-
-function guessOne(){
-  // Get a guess from the player
-  var playerGuess = document.getElementById("guess").value;
-  ph = MAXTRIES - (attempts-1);
-  h+= "Attempt " + ph + ": " + playerGuess + "<br />";
-  document.getElementById("history").innerHTML= h;
-  console.log(h); 
-      
-  if (playerGuess == rLetter){
-     wins+=1;
-     document.getElementById("message").innerHTML= "Correct! Keep Guessing.";    
-     document.getElementById("wins").innerHTML= "Total Wins: " +wins;
-     randomLetter();
-  } else {
-    losses+=1;
-    if(attempts==1){   
-      document.getElementById("guessbtn").disabled=true;
-      document.getElementById("message").innerHTML= "Sorry Game Over! Hit Restart Button";
-    } else{
-      attempts-=1;
-      
-      document.getElementById("message").innerHTML= "Nope! You have " + attempts + " left.";    
+    else if (crystalValue < total){
+      $(".winlossmessage").html("Sorry you lost!");
+      lose=lose+1;
+      $(".losses").html(lose);
+      //reset the game
+      reset();
     }
+
+  };
+
+  //reset the game
+  function reset(){
+    gemArray.length=0;
+    gemFunc();
+    crystalValue = Math.floor(Math.random() * (102)+ 19);
+    $(".numberToMatch").html(crystalValue);
+    total=0;
+    $(".score").html(total);
+    console.log(gemArray);
   }
-  document.getElementById("wins").innerHTML= "Total Wins: " +wins;
-      document.getElementById("losses").innerHTML= "Total Losses: " +losses;
-      if (DEBUG == 1){
-        console.log(attempts);
-      }
-}
 
 
-document.onsubmit = function(e){
-  e.preventDefault();
-}
-
-//reset game
-function newGame(){
-  // losses=0;
-  attempts=MAXTRIES;
-  if (DEBUG == 1){
-    console.log(attempts);
-  }
-  document.getElementById("wins").innerHTML= "";
-  document.getElementById("losses").innerHTML= "";
-  document.getElementById("guessbtn").disabled=false;
-  randomLetter();
-  document.getElementById("message").innerHTML= "Good Luck!";
-  document.getElementById("guess").focus();
-  h = "";
-  document.getElementById("history").innerHTML= "";
-
-} 
-
-
-  
-  
-  
-    
-
-
-    
+});
