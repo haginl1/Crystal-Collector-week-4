@@ -58,7 +58,9 @@ body{
   clear: both;
   margin: 0 auto;
   width: 100%;
+  height: auto;
   max-width: 960px;
+
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -68,18 +70,22 @@ body{
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {
+      
+      height: auto;
+    
+    }
     
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
       background-color: grey;
-      height: 145%;
+      height: 100%;
     }
     
     /* Set black background color, white text and some padding */
     footer {
-      background-color: #555;
+      background-color: green;
       color: white;
       padding: 15px;
     }
@@ -91,6 +97,45 @@ body{
         padding: 15px;
       }
       .row.content {height:auto;} 
+      
+      .pic img{
+        border: 1px solid #fff;  
+        float: left;
+        height: 25px;
+        width: 25px;
+        margin: 20px;
+        overflow: hidden;
+        
+        -webkit-box-shadow: 5px 5px 5px #111;
+                box-shadow: 5px 5px 5px #111;  
+      }
+
+      .grow img {
+        height: 50px;
+        width: 50px;
+      
+        -webkit-transition: all 1s ease;
+          -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+                transition: all 1s ease;
+      }
+      
+      .grow img:hover {
+        width: 50px;
+        height: 50px;
+      }
+      h1 {
+
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+
+
     }
 
 
