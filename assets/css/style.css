@@ -101,9 +101,9 @@ body{
       .pic img{
         border: 1px solid #fff;  
         float: left;
-        height: 25px;
-        width: 25px;
-        margin: 20px;
+        height: 50px;
+        width: 50px;
+        margin: 5px;
         overflow: hidden;
         
         -webkit-box-shadow: 5px 5px 5px #111;
@@ -111,8 +111,8 @@ body{
       }
 
       .grow img {
-        height: 50px;
-        width: 50px;
+        height: 55px;
+        width: 55px;
       
         -webkit-transition: all 1s ease;
           -moz-transition: all 1s ease;
@@ -124,16 +124,23 @@ body{
       .grow img:hover {
         width: 50px;
         height: 50px;
+        transition: .5s;
       }
       h1 {
 
         font-size: 20px;
       }
-
-      p {
+      h3{
         font-size: 16px;
       }
 
+      p {
+        font-size: 14px;
+      }
+
+      div.well{
+        padding: 10px;
+      }
 
 
     }
