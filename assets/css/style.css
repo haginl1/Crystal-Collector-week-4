@@ -113,6 +113,7 @@ body{
       .grow img {
         height: 55px;
         width: 55px;
+        margin-bottom:100px;
       
         -webkit-transition: all 1s ease;
           -moz-transition: all 1s ease;
@@ -141,7 +142,7 @@ body{
       div.well{
         padding: 10px;
       }
-
+      
 
     }
 
